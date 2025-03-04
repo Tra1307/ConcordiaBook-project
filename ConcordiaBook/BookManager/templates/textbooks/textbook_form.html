@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if object %}Edit{% else %}Add{% endif %} Textbook</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>{% if object %}Edit{% else %}Add{% endif %} Textbook</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}  <!-- Displays the form fields nicely -->
+            </div>
+
+            <button type="submit" class="btn">{% if object %}Update{% else %}Add{% endif %} Textbook</button>
+        </form>
+
+        <a href="{% url 'all_textbooks' %}" class="btn btn-back">Back to All Textbooks</a>
+    </div>
+</body>
+</html>

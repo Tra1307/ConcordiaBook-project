@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbooks for {{ request.path|slice:"10:" }}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Textbooks for {{ request.path|slice:"10:" }}</h1>
+
+    {% if textbooks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Edition</th>
+                    <th>Condition</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in textbooks %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.edition|default:"N/A" }}</td>
+                        <td>{{ book.condition }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No textbooks are currently available for this course.</p>
+    {% endif %}
+</body>
+</html>

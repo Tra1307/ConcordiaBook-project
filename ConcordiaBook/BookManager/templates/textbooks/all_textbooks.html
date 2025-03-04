@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Available Textbooks</title>
+    {% load static %}
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to CSS -->
+</head>
+<body>
+    <h1>All Available Textbooks</h1>
+
+    <div class="button-container">
+        <a href="{% url 'textbook_form' %}" class="btn">Add New Textbook</a>
+    </div>
+
+    {% if textbooks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Edition</th>
+                    <th>Condition</th>
+                    <th>Course Code</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in textbooks %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.edition|default:"N/A" }}</td>
+                        <td>{{ book.condition }}</td>
+                        <td>{{ book.course_code }}</td>
+                        <td>
+                            <a href="{% url 'textbook_edit' book.id %}" class="btn btn-edit">Edit</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No textbooks are available for trade at this time.</p>
+    {% endif %}
+</body>
+</html>

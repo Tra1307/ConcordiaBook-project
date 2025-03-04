@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-edit {
+    background-color: #28a745;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+}
+
+.btn-back {
+    background-color: #6c757d;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Button Container */
+.button-container {
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    font-size: 16px;
+}
+
+/* Table rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #d6e4ff;
+    cursor: pointer;
+}
+
+/* Form styling */
+.form-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form p {
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
